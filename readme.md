@@ -64,3 +64,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # my-menu-restaurant
+
+O Sistema de controle de restaurante é uma solução que permite um controle
+do funcionamento de um estabelecimento, com cadastro dos usuários do
+sistema, cadastro dos pratos disponíveis e menus servidos e possibilita reserva
+de mesas disponíveis via breve cadastro do cliente, além de controle de
+comandas com o restaurante em funcionamento. Este controle de comandas é
+possível através da identificação do garçom, da mesa e dos produtos solicitados,
+e tem como ação final a finalização da conta específica, com acréscimo de
+couvert artístico, caso seja necessário, e pagamento da mesma. Este sistema está
+relacionado com um aplicativo mobile onde ocorre uma fidelização de clientes,
+através de um controle de acesso da quantidade de vezes que o cliente vai ao
+restaurante, estabelecendo assim uma fidelização a partir de bonificação ao se
+atingir uma quantidade específica de acessos. Este controle só é possível através
+de um cadastro do cliente e inclusão de código validador a cada ida ao
+restaurante.
+Para instalar o projeto localmente , alguns requisitos de instalação devem ser
+atendidos. Necessita-se:
+1) Php 7.1+
+2) Laravel 5.6+
+3) Mysql 5.6
