@@ -3,24 +3,46 @@
 <head>
     <title>My Menu Restaurant</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body class="page1" id="top">
+
+<header>
+    <section id="stuck_container">
+        <div class="container">
+            <div class="row">
+                <div class="grid_12">
+                    <h1 style="font-size: 80px">
+                        <p>My Menu Restaurant</p>
+                    </h1>
+                    <div class="navigation">
+
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+
+
 <center>
     @if(Session::has('message'))
-        <div class="alert alert-success">
+        <div class="alert alert-success" >
             {{Session::get('message')}}
         </div>
     @endif
     @if(count($errors) > 0)
-        <div class="alert-danger">
+        <div class="alert-danger" style="color: white; background-color: darkred">
             @foreach($errors->all() as $error)
                 <li>{{$error}}</li>
             @endforeach
         </div>
 
     @endif
-    <section class="content" style="background-color: white;">
+    <section class="align-items-center" style="background-color: darkseagreen;">
         <div class="container">
             <div class="row">
                 <div class="grid_4">
