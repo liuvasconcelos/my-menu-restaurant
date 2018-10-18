@@ -2,7 +2,7 @@
 
 @section('principal')
 <div class="row">
-    <div class="grid_4">
+    <div class="container">
         <h2>Cadastro de insumos</h2>
         @if(Session::has('message'))
             <div class="alert alert-success">
@@ -10,38 +10,37 @@
             </div>
         @endif
         @if(count($errors) > 0)
-            <div class="alert-danger">
+            <div class="alert-danger" style="color: white; background-color: darkred">
                 @foreach($errors->all() as $error)
                     <li>{{$error}}</li>
                 @endforeach
             </div>
-
         @endif
-        <form id="createProductForm"   action="{{route('updateitem')}}" enctype="multipart/form-data" method="post">
+
+        <form  id="createProductForm"   action="{{route('updateitem')}}" enctype="multipart/form-data" method="post">
             {{csrf_field()}}
-            <em>Item: </em>
-            <div class="tmInput">
+
+            <h3 style="font-size: 20px; margin-top: 10px">Item: </h3>
+            <div class="custom-control-input">
                 <input name="name" id="name" type="text" >
             </div>
-            <em>Preço:</em>
+            <h3 style="font-size: 20px; margin-top: 10px">Preço: </h3>
             <div class="tmInput">
                 <input name="price" id="price" type="number" placeHolder='R$00.00'>
             </div>
             <div class="clear f_sep1"></div>
-            <em>Imagem do item:</em>
+            <h3 style="font-size: 20px; margin-top: 10px">Imagem do item: </h3>
             <div class="tmInput">
                 <input name="image" id="image" type="file">
             </div>
             <div class="clear f_sep1"></div>
-            <em>Detalhes:</em>
+            <h3 style="font-size: 20px; margin-top: 10px">Detalhes: </h3>
             <div class="tmTextarea">
                 <textarea name="Message" ></textarea>
             </div>
-            <div class="ta__right">
-                <button value="Cadastrar">
-                    Cadastrar
-                </button>
-            </div>
+            <button value="Cadastrar" style="background-color: #4CAF50; color: white; width: 150px;">
+                Cadastrar
+            </button>
         </form>
     </div>
 </div>
