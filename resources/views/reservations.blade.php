@@ -7,7 +7,7 @@
         </div>
     @endif
     @if(count($errors) > 0)
-        <div class="alert-danger">
+        <div class="alert-danger"  style="color: white; background-color: darkred">
             @foreach($errors->all() as $error)
                 <li>{{$error}}</li>
             @endforeach
@@ -20,22 +20,21 @@
 
         <form id="bookingForm" action="{{route('updateTables')}}" method="post">
             {{csrf_field()}}
-            <em>Nome do Cliente: </em>
+            <h3 style="font-size: 20px; margin-top: 10px">Nome do Cliente: </h3>
             <div class="tmInput">
                 <input name="name" id="name" type="text">
             </div>
-            <em>Telefone do Cliente: </em>
+            <h3 style="font-size: 20px; margin-top: 10px">Telefone do Cliente: </h3>
             <div class="tmInput">
                 <input name="phone" id="phone" type="text">
             </div>
-
-            <em>Data: </em>
+            <h3 style="font-size: 20px; margin-top: 10px">Data: </h3>
             <label >
                 <input type="date" id="date" name="date" >
             </label>
 
             <div class="fl1 ">
-                <em>Pessoas: </em>
+                <h3 style="font-size: 20px; margin-top: 10px">Pessoas: </h3>
                 <select name="people" id="people" class="tmSelect auto" data-class="tmSelect tmSelect2">
                     <option>1</option>
                     <option>2</option>
@@ -48,7 +47,7 @@
             </div>
 
             <div class="fl1 ">
-                <em>Mesa: </em>
+                <h3 style="font-size: 20px; margin-top: 10px">Mesa: </h3>
                 <select name="table" id="table" class="tmSelect auto" data-class="tmSelect tmSelect2">
                     <option>1</option>
                     <option>2</option>
@@ -68,14 +67,14 @@
             </div>
 
 
-            <div class="tmTextarea">
+            <div class="tmTextarea" style="margin-top: 10px">
                 <textarea name="obs" placeHolder="Observações:"></textarea>
             </div>
-            <div class="ta__right">
-                <button value="Reservar">
-                    Reservar
-                </button>
-            </div>
+
+            <button value="Reservar" style="background-color: #4CAF50; color: white; width: 150px;">
+                Reservar
+            </button>
+
         </form>
     </div>
 </div>
