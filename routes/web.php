@@ -26,3 +26,7 @@ Route::get('/login', 'LoginController@logout') -> name('logout');
 Route::get('/registerItem', 'RegisterController@goToRegisterAItem') -> name('registeraitem');
 Route::post('/registerr', 'RegisterController@register') -> name('updateitem');
 Route::post('/tablecontrol', 'ReservationController@reserve') -> name('updateTables');
+
+Route::get('/registermenu', 'RegisterController@goToRegisterMenu') -> name('registermenu');
+Route::post('/addmenu', 'RegisterController@registerMenu') -> name('addmenu');
+

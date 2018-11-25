@@ -44,7 +44,7 @@
                 <div class="gall_bot">
                     <div class="text1"><a href="#">Menus</a></div>
                     <br>
-                    <a href="#" class="btn">Cadastrar</a></div>
+                    <a href="{{route('registermenu')}}" class="btn">Cadastrar</a></div>
             </div>
         </div>
     </div>
