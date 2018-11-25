@@ -22,20 +22,27 @@
 
             <h3 style="font-size: 20px;">Entrada: </h3>
             <div class="custom-control-input">
-                <select name="table" id="table" class="tmSelect auto" data-class="tmSelect">
-                    <option>Entrada -1</option>
-                    <option>Entrada -2</option>
-                    <option>Entrada -3</option>
-                    <option>Entrada -4</option>
+                <select name="entry" id="entry" class="tmSelect auto" data-class="tmSelect">
+                    @foreach ($entries as $entry)
+                     <option value="{{$entry->id}}">{{$entry->name}}</option>
+                    @endforeach
                 </select>
             </div>
             <h3 style="font-size: 20px;">Prato principal: </h3>
             <div class="custom-control-input">
-                <input name="main" id="main" type="text" style="width: 300px">
+                <select name="main" id="main" class="tmSelect auto" data-class="tmSelect">
+                    @foreach ($mainCourses as $mainCourse)
+                        <option value="{{$mainCourse->id}}">{{$mainCourse->name}}</option>
+                    @endforeach
+                </select>
             </div>
             <h3 style="font-size: 20px;">Sobremesa: </h3>
             <div class="custom-control-input">
-                <input name="dessert" id="dessert" type="text" style="width: 300px">
+                <select name="dessert" id="dessert" class="tmSelect auto" data-class="tmSelect">
+                    @foreach ($desserts as $dessert)
+                        <option value="{{$dessert->id}}">{{$dessert->name}}</option>
+                    @endforeach
+                </select>
             </div>
             <h3 style="font-size: 20px; ">Valor: </h3>
             <div class="tmInput">

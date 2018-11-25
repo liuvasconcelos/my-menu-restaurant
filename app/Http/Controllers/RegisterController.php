@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterMenuRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Models\itens\Item;
+use App\Models\itens\Menu;
 
 class RegisterController extends Controller
 {
@@ -19,15 +22,28 @@ class RegisterController extends Controller
     }
 
     public function goToRegisterMenu() {
-        //checar se tem pelo menos 1 de cada cadastrado.
-        //se sim -> abre tela
-        //se nao -> mostra aviso
+        $itens = Item::query()->get();
 
+        $entries     = $itens->where('type', 1);
+        $mainCourses = $itens->where('type', 2);
+        $desserts    = $itens->where('type', 3);
 
-        return view('registermenu');
+        if(count($entries) == 0 || count($mainCourses) == 0 || count($desserts) == 0 ) {
+            return redirect()->back()->withErrors('Não existe itens suficientes cadastrados para a adição de um menu.');
+        } else {
+            return view('registermenu')->with(['entries'=> $entries, 'mainCourses'=>$mainCourses, 'desserts'=>$desserts]);
+        }
+
     }
 
-    public function registerMenu(RegisterRequest $request) {
+    public function registerMenu(RegisterMenuRequest $request) {
+        Menu::create([
+            'entry'   => $request->entry,
+            'main'    => $request->main,
+            'dessert' => $request->dessert,
+            'price'   => $request->price,
+        ]);
+
         return view('registeritens');
     }
 
