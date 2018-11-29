@@ -25,8 +25,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name'  => 'required',
-            'price' => 'required|numeric',
-            'image' => 'image'
+            'price' => 'required|numeric'
         ];
     }
 
@@ -35,8 +34,7 @@ class RegisterRequest extends FormRequest
         return [
             'name.required'  => 'Favor informar nome do produto',
             'price.required' => 'Favor informar preço',
-            'price.numeric'  => 'Preço inválido',
-            'image.image'    => 'Arquivo selecionado deve ser uma imagem'
+            'price.numeric'  => 'Preço inválido'
         ];
     }
 }

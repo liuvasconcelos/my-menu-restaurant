@@ -18,6 +18,12 @@ class RegisterController extends Controller
     }
 
     public function register(RegisterRequest $request) {
+        Item::create([
+            'name'        => $request->name,
+            'description' => $request->description,
+            'type'        => 1,
+            'price'       => $request->price,
+        ]);
         return view('registeritens');
     }
 

@@ -29,14 +29,9 @@
                 <input name="price" id="price" type="number" placeHolder='R$00.00' style="width: 300px">
             </div>
             <div class="clear f_sep1"></div>
-            <h3 style="font-size: 20px; ">Imagem do item: </h3>
-            <div class="tmInput">
-                <input name="image" id="image" type="file" style="width: 300px">
-            </div>
-            <div class="clear f_sep1"></div>
             <h3 style="font-size: 20px; ">Detalhes: </h3>
             <div class="tmTextarea">
-                <textarea name="Message"  style="width: 300px; height: 40px;"></textarea>
+                <textarea name="description"  id="description" style="width: 300px; height: 40px;"></textarea>
             </div>
             <button value="Cadastrar" style="background-color: #4CAF50; color: white; width: 150px;">
                 Cadastrar
