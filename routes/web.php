@@ -20,7 +20,6 @@ Route::post('/home', 'LoginController@login') -> name('login');
 Route::get('/principalhome', 'LoginController@goToHome') -> name('home');
 Route::get('/register', 'RegisterController@goToChooseRegister') -> name('register');
 Route::get('/reservation', 'ReservationController@goToReservation') -> name('reservation');
-Route::get('/tablecontrol', 'TablesControlController@goToTablesControl') -> name('tablecontrol');
 Route::get('/login', 'LoginController@logout') -> name('logout');
 
 Route::get('/registerItem', 'RegisterController@goToRegisterAItem') -> name('registeraitem');
@@ -29,4 +28,7 @@ Route::post('/tablecontrol', 'ReservationController@reserve') -> name('updateTab
 
 Route::get('/registermenu', 'RegisterController@goToRegisterMenu') -> name('registermenu');
 Route::post('/addmenu', 'RegisterController@registerMenu') -> name('addmenu');
+
+Route::get('/tablecontrol', 'TablesControlController@goToTablesControl') -> name('tablecontrol');
+Route::get('{idTable}/addorder', 'TablesControlController@addOrder') -> name('addorder');
 
