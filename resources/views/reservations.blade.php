@@ -49,19 +49,9 @@
             <div class="fl1 ">
                 <h3 style="font-size: 20px; margin-top: 10px">Mesa: </h3>
                 <select name="table" id="table" class="tmSelect auto" data-class="tmSelect tmSelect2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                    <option>13</option>
+                    @foreach ($tables as $table)
+                        <option>{{$table->id}}</option>
+                    @endforeach
                 </select>
 
             </div>
